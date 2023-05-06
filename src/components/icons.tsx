@@ -1,8 +1,8 @@
 import {
+  Github,
   Moon,
   SunMedium,
   Twitter,
-  Github,
   type Icon as LucideIcon,
 } from "lucide-react"
 
