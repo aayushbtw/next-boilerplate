@@ -5,12 +5,15 @@ export const tailwindConfig = plugin(
   function ({ addBase }) {
     addBase({
       ":root": {
-        "--background": "0 0% 100%",
-        "--foreground": "222.2 47.4% 11.2%",
+        "--bg-primary": "250 250 250",
+        "--text-primary": "0 0 0",
       },
       ".dark": {
-        "--background": "224 71% 4%",
-        "--foreground": "213 31% 91%",
+        "--bg-primary": "26 26 26",
+        "--text-primary": "255 255 255",
+      },
+      body: {
+        "@apply bg-primary font-sans text-primary": {},
       },
     })
   },
@@ -18,9 +21,11 @@ export const tailwindConfig = plugin(
     darkMode: ["class"],
     theme: {
       extend: {
-        colors: {
-          background: "hsl(var(--background))",
-          foreground: "hsl(var(--foreground))",
+        backgroundColor: {
+          primary: "rgb(var(--bg-primary))",
+        },
+        textColor: {
+          primary: "rgb(var(--text-primary))",
         },
         fontFamily: {
           sans: ["var(--font-sans)", ...fontFamily.sans],
